@@ -26,7 +26,7 @@ public class Order implements Serializable {
     private Date createdAt;
 
     @NotBlank(message = "Podanie imienia i nazwiska jest obowiązkowe!")
-    private String name;
+    private String clientName;
 
     @NotBlank(message = "Podanie ulicy jest obowiązkowe!")
     private String street;
