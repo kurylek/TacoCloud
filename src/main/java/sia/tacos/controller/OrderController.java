@@ -36,7 +36,6 @@ public class OrderController {
 
         orderRepository.save(order);
         sessionStatus.setComplete();
-        System.out.println(orderRepository.findAll());
 
         return "redirect:/";
     }
