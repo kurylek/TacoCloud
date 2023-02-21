@@ -1,4 +1,4 @@
-package sia.tacos.controller;
+package sia.tacos.controller.TH;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -10,12 +10,12 @@ import sia.tacos.repository.UserRepository;
 
 @Controller
 @RequestMapping("/register")
-public class RegistrationController {
+public class THRegistrationController {
 
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-    public RegistrationController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public THRegistrationController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }

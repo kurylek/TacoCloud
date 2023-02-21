@@ -1,4 +1,4 @@
-package sia.tacos.controller;
+package sia.tacos.controller.TH;
 
 import javax.validation.Valid;
 
@@ -18,11 +18,11 @@ import sia.tacos.repository.OrderRepository;
 @Controller
 @RequestMapping("/orders")
 @SessionAttributes("order")
-public class OrderController {
+public class THOrderController {
 
     private OrderRepository orderRepository;
 
-    public OrderController(OrderRepository orderRepository) {
+    public THOrderController(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
