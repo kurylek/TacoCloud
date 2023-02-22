@@ -28,6 +28,44 @@ public class OrderController {
         return orderRepository.save(order);
     }
 
+    @PutMapping(path="/{orderId}", consumes = "application/json")
+    public Order putOrder(@RequestBody Order order) {
+        return orderRepository.save(order);
+    }
+
+    @PatchMapping(path="/{orderId}", consumes = "application/json")
+    public Order patchOrder(@PathVariable("orderId") Long orderId,
+                            @RequestBody Order path) {
+        Order order = orderRepository.findById(orderId).get();
+
+        if(path.getClientName() != null) {
+            order.setClientName(path.getClientName());
+        }
+        if(path.getStreet() != null) {
+            order.setStreet(path.getStreet());
+        }
+        if(path.getCity() != null) {
+            order.setCity(path.getCity());
+        }
+        if(path.getState() != null) {
+            order.setState(path.getState());
+        }
+        if(path.getZip() != null) {
+            order.setZip(path.getZip());
+        }
+        if(path.getCcNumber() != null) {
+            order.setCcNumber(path.getCcNumber());
+        }
+        if(path.getCcExpiration() != null) {
+            order.setCcExpiration(path.getCcExpiration());
+        }
+        if(path.getCcCVV() != null) {
+            order.setCcCVV(path.getCcCVV());
+        }
+
+        return orderRepository.save(order);
+    }
+
     @DeleteMapping("/{orderId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteOrder(@PathVariable("orderId") Long orderId) {
